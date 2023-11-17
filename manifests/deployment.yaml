@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autocicd
+  labels:
+    app: autocicd
+  namespace: namespace-workflow-1700213479412
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autocicd
+  template:
+    metadata:
+      labels:
+        app: autocicd
+    spec:
+      containers:
+        - name: autocicd
+          image: acrworkflow1700213479412.azurecr.io/image-workflow-1700213479412:latest
+          ports:
+            - containerPort: 8000
