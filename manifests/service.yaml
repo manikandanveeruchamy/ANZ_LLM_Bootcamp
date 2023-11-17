@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: autocicd
+  namespace: namespace-workflow-1700213479412
+spec:
+  type: LoadBalancer
+  selector:
+    app: autocicd
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
